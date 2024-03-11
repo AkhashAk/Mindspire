@@ -1,0 +1,403 @@
+/* .App { */
+/* max-width: 50em;
+  margin: 0 auto;
+  padding: 32px; */
+/* } */
+
+::-webkit-scrollbar {
+  width: 0.1rem;
+  /* Adjust to your preference */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  /* Hide the thumb */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.createForm {
+  row-gap: 33px;
+}
+
+.input-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.463), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-div {
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding: 32px;
+  padding-bottom: 10px;
+}
+
+.flexGrow {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.blog-container {
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  font-size: smaller;
+  color: black;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(0.25turn, #aac6d1, #f8e1e1, #bed1aa);
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1em;
+}
+
+.input-blog {
+  width: 100%;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 0.5rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.input-blog:focus,
+.input-blog:active {
+  border-color: transparent;
+  border-bottom: 2px solid #1c87c9;
+}
+
+.input-blog:focus {
+  outline: none;
+}
+
+.input-textarea-blog {
+  height: 20rem;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.pre-des {
+  font-size: larger;
+  text-align: left;
+  white-space: pre-wrap;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.blogs-container {
+  position: relative;
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr);
+  row-gap: 1rem;
+  margin-top: 6rem;
+  margin-bottom: 0;
+  border-radius: 0.5rem;
+  /* background: #08152f; */
+}
+
+h2 {
+  color: #fff;
+}
+
+form h2 {
+  text-align: center;
+  margin-top: 0;
+  grid-column: 1/-1;
+  color: black;
+}
+
+.blog-h2 {
+  color: #fff;
+  text-align: center;
+  margin-top: 10;
+  grid-column: 1/-1;
+}
+
+.blog-card {
+  overflow: hidden;
+  /* border: 1px solid black; */
+  border-radius: .5rem;
+  padding: 1rem;
+  position: relative;
+  padding-bottom: 0;
+  background: linear-gradient(1turn, #e5eff3, #bed1aa);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.463), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.centered-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.success-port-card {
+  max-width: fit-content;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: relative;
+  background: #010866;
+}
+
+.blog-title {
+  /* height: 80px; */
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  background-color: #010866;
+  border-radius: 0.2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-description {
+  margin-bottom: 50px;
+}
+
+.expandable-div {
+  height: 5.4rem;
+  padding: 0 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 20px;
+  max-height: 20rem;
+  /* Set a maximum height for the collapsed state */
+  overflow: hidden;
+  transition: all, 0.2s;
+}
+
+.expandable-div.expanded {
+  max-height: none;
+  height: 100%;
+  overflow: scroll;
+  transition: all, 0.2s ease-out;
+}
+
+.read-more-button {
+  position: static;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.title-description {
+  height: minmax(10rem, 10rem);
+  overflow: hidden;
+}
+
+.blog-outer-div {
+  position: relative;
+}
+
+.btns-bottom {
+  width: -webkit-fill-available;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+}
+
+.btn-flex {
+  display: flex;
+  bottom: 0;
+  left: 0;
+  /* Optional: Add padding to the pagination div */
+  z-index: 3;
+  /* Ensure the pagination appears above other content */
+  width: 100%;
+  /* Optional: Adjust the width as needed */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-delete {
+  margin-left: 48px;
+}
+
+.btn-update,
+.btn-delete,
+.read-more-button {
+  background-clip: padding-box;
+  background-color: #274a9c;
+  border: 1px solid transparent;
+  border-radius: .3rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 0.5;
+  min-height: 2rem;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: block;
+  cursor: pointer;
+  transition: all, 0.1s;
+}
+
+.btn-update:hover,
+.btn-delete:hover,
+.read-more-button:hover {
+  transition: all, 0.1s;
+  border: 1px solid #fccb06;
+  color: #ff96ad;
+  background-color: #17181c;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.saveBlog {
+  text-align: center;
+  background-clip: padding-box;
+  background-color: #fa6400;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2;
+  margin: auto;
+  margin-top: 1rem;
+  min-height: 3rem;
+  position: relative;
+  text-decoration: none;
+  touch-action: manipulation;
+  display: block;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: all, 0.5s;
+}
+
+.saveBlog:hover {
+  border: 1px solid #ff96ad;
+  color: #ff96ad;
+  background-color: #17181c;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group__input {
+  font: inherit;
+  color: #000000;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: 2px solid rgb(22 187 113);
+  background-color: white;
+  transition: outline-color 500ms;
+}
+
+.input-group__input:is(:focus, :valid) {
+  outline-color: rgb(22 187 113);
+}
+
+.input-group__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: 10px 10px;
+  color: #000000;
+  transition: translate 500ms, scale 500ms;
+}
+
+.input-group__input:focus+.input-group__label,
+.input-group__input:valid+.input-group__label {
+  padding-inline: 5px;
+  translate: 10px -17px;
+  scale: 0.8;
+  background: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.demo {
+  background: #5d9cec;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.demo button {
+  background-color: #4a89dc;
+  border: 0;
+  color: #fff;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/** 
+  Demo Specific Styles
+  Not related to Loader
+*/

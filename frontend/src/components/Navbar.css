@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600');
+.active {
+    background-color: #1d4ed8;
+}
+
+.navBar {
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(0.25turn, #aac6d1, #bed1aa);
+    box-shadow: 0px 3px 20px 0px #666666;
+    color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+
+.navBar ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav {
+    font-family: Arial, Helvetica, sans-serif;
+    /* text-transform:capitalize; */
+    text-align: center;
+    align-items: center;
+    font-weight: 400;
+}
+
+.nav * {
+    box-sizing: border-box;
+    transition: all .15s ease;
+}
+
+.nav li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: .5em 1em;
+    padding: 0;
+}
+
+.nav-link {
+    padding: .5em .8em;
+    color: rgba(255, 255, 255, .5);
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navBar ul li {
+    list-style: none;
+}
+
+.navBar ul li a {
+    display: inline;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.5em 0.8em;
+    color: black;
+    position: relative;
+    font-size: 20px;
+}
+
+.navBar ul li a:not(.active):hover {
+    background-color: #172554;
+}
+
+.navBar .menu {
+    display: contents;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+}
+
+.navBar ul li span {
+    height: 3rem;
+    width: 100%;
+    background-color:brown;
+    display: inline;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .5em .8em;
+    color: rgb(255, 255, 255);
+    position: relative;
+    font-size: 20px;
+}
+
+.navBar ul li a::before,
+.navBar ul li a::after {
+    content: '';
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    transition: all .15s ease;
+    opacity: 0;
+}
+
+.navBar ul li a::before {
+    content: '';
+    left: 0;
+    bottom: 0;
+    /* border-top: 3px solid #3E8914; */
+    /* border-right: 3px solid #2E640F; */
+    transform: translate(50%, -40%);
+}
+
+.navBar ul li a::after {
+    content: '';
+    right: 0;
+    top: 0;
+    transform: translate(-100%, 50%);
+}
+
+.navBar ul li a:hover:before,
+.navBar ul li a:hover:after {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.navBar ul li a:hover {
+    color:rgb(255, 255, 255);
+    /* color: #fce306; */
+}
+
+.navBar ul li a svg:hover {
+    color: rgb(255, 255, 255);
+}
+
+.custom-logout-icon {
+    margin-top: 0.45rem;
+}
+
+@media (max-width: 480px) {
+    nav .menu {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        margin: 0.2rem 0.5rem;
+    }
+}
