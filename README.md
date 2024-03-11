@@ -28,7 +28,7 @@ Make sure you have the following installed:
 - Clone the repository
 
 ```bash
-git clone https://github.com/Akhash/Blog-Application.git
+git clone https://github.com/AkhashAk/Mindspire.git
 ```
 
 - Navigate to the project folder
