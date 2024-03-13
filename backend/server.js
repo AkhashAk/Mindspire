@@ -14,6 +14,8 @@ app.use("/blogs", blogRouter);
 app.use("/user", userRouter);
 app.use(bodyParser.json());
 
+const PORT = process.env.PORT || 5000;
+
 //DB Config
 mongoose.set("strictQuery", false);
 mongoose
@@ -23,7 +25,7 @@ mongoose
   })
   .then(() => {
     console.log("connected to MongoDB");
-    app.listen(5001, console.log(`Server started at port 5001`));
+    app.listen(PORT || 3000, "0.0.0.0", console.log(`Server started at port 5001`));
   })
   .catch((error) => {
     console.error(error);
